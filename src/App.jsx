@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import confetti from 'canvas-confetti'
+import ReactPlayer from 'react-player/youtube'
 import './App.css'
 import boyImg from './assets/boy.jpg'
 import girlImg from './assets/girl.jpg'
@@ -19,9 +20,10 @@ function App() {
   const [student2] = useState('Chi Huu')
   const [hearts, setHearts] = useState([])
   const [daysOfLove, setDaysOfLove] = useState(0)
-  const [showSurprise, setShowSurprise] = useState(false)
+  const [isMusicPlaying, setIsMusicPlaying] = useState(true)
 
   const videos = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10]
+  const videoRefs = useRef([])
 
   useEffect(() => {
     // Calculate days of love
@@ -44,33 +46,33 @@ function App() {
   }, [])
 
   const handleCelebrate = () => {
-    setShowSurprise(true)
-    
-    // Confetti Cannon!
-    const scalar = 2
     const heart = confetti.shapeFromPath({ path: 'M167 10c-33.74-33.47-88.32-33.19-121.78 0s-33.47 88.32 0 121.78l105.11 105.11a24.1 24.1 0 0 0 34.07 0l105.11-105.11c33.47-33.47 33.74-88.32 0-121.78s-88.32-33.47-121.78 0L167 43.11l-2.89-2.89z' })
-
     confetti({
       shapes: [heart],
-      particleCount: 50,
-      spread: 70,
+      particleCount: 150,
+      spread: 120,
       origin: { y: 0.6 },
       colors: ['#ff758c', '#ff7eb3', '#ac32e4']
     })
+  }
 
-    setTimeout(() => {
-      confetti({
-        shapes: [heart],
-        particleCount: 200,
-        spread: 160,
-        origin: { y: 0.6 },
-        colors: ['#ff758c', '#ff7eb3', '#ac32e4']
-      })
-    }, 500)
+  const onVideoPlay = () => {
+    setIsMusicPlaying(false)
   }
 
   return (
     <div className="app">
+      {/* Hidden Music Player */}
+      <div style={{ display: 'none' }}>
+        <ReactPlayer 
+          url="https://www.youtube.com/watch?v=6mCj4zBdOGc"
+          playing={isMusicPlaying}
+          loop={true}
+          volume={0.5}
+          onPlay={() => setIsMusicPlaying(true)}
+        />
+      </div>
+
       <div className="heart-bg">
         {hearts.map(heart => (
           <div 
@@ -129,6 +131,7 @@ function App() {
                     controls 
                     muted 
                     loop
+                    onPlay={onVideoPlay}
                     style={{ 
                       width: '100%', 
                       borderRadius: '20px', 
@@ -171,7 +174,7 @@ function App() {
                   textShadow: '0 0 25px rgba(255, 117, 140, 1)',
                   animation: 'pulse 2s infinite ease-in-out'
                 }}>❤️</div>
-                {!showSurprise && <div style={{ position: 'absolute', bottom: '-40px', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontSize: '1rem', color: '#ff758c', fontWeight: '500', pointerEvents: 'none' }}>Xem câu chuyện của bọn mình nhé ✨</div>}
+                <div style={{ position: 'absolute', bottom: '-40px', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontSize: '1rem', color: '#ff758c', fontWeight: '500', pointerEvents: 'none' }}>Celebrate ✨</div>
             </div>
             
             <div className="student">
@@ -188,36 +191,37 @@ function App() {
             </div>
           </div>
 
-          {showSurprise && (
-            <div className="surprise-message" style={{ 
-              marginTop: '3rem', 
-              animation: 'fadeInUp 1s ease-out', 
-              color: '#ff7eb3', 
-              background: 'rgba(255, 255, 255, 0.08)',
-              padding: '2rem',
-              borderRadius: '20px',
-              border: '1px solid rgba(255, 117, 140, 0.2)',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-              textAlign: 'center'
-            }}>
-               <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', background: 'linear-gradient(135deg, #ff7eb3, #ac32e4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Câu chuyện của bọn mình
-               </h3>
-               <p style={{ fontSize: '1.25rem', lineHeight: '1.8', color: '#ff9cb3', fontWeight: '500' }}>
-                Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép viết tắt PN Viet Nam) và đó cũng là cơ duyên mà bọn mình gặp nhau.
-               </p>
-               <button 
-                 onClick={() => setShowSurprise(false)}
-                 style={{ marginTop: '1.5rem', background: 'transparent', border: '1px solid rgba(255,255,255,0.3)', fontSize: '0.8rem', padding: '0.5rem 1rem' }}
-               >Close</button>
-            </div>
-          )}
+          <div className="surprise-message" style={{ 
+            marginTop: '3rem', 
+            color: '#ff7eb3', 
+            background: 'rgba(255, 255, 255, 0.08)',
+            padding: '2rem',
+            borderRadius: '20px',
+            border: '1px solid rgba(255, 117, 140, 0.2)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+            textAlign: 'center'
+          }}>
+             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', background: 'linear-gradient(135deg, #ff7eb3, #ac32e4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Câu chuyện của bọn mình
+             </h3>
+             <p style={{ fontSize: '1.25rem', lineHeight: '1.8', color: '#ff9cb3', fontWeight: '500' }}>
+              Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép viết tắt PN Viet Nam) và đó cũng là cơ duyên mà bọn mình gặp nhau.
+             </p>
+          </div>
         </section>
       </main>
 
       <footer style={{ marginTop: '4rem', paddingBottom: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>
         Thi Chien ❤️ Chi Huu — A Decade of Love
       </footer>
+
+      {/* Control music manually if needed */}
+      <button 
+        onClick={() => setIsMusicPlaying(!isMusicPlaying)}
+        style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 100, padding: '10px', borderRadius: '50%', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyItems: 'center', background: 'rgba(255,117,140,0.3)', border: '1px solid #ff758c' }}
+      >
+        {isMusicPlaying ? '🔇' : '🎵'}
+      </button>
 
       <style>{`
         @keyframes pulse {
@@ -227,10 +231,6 @@ function App() {
         @keyframes shine {
           0%, 100% { opacity: 0.8; transform: scale(1); }
           50% { opacity: 1; transform: scale(1.05); }
-        }
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </div>
