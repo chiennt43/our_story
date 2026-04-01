@@ -7,13 +7,18 @@ import v2 from './assets/moments_2.mp4'
 import v3 from './assets/moments_3.mp4'
 import v4 from './assets/moments_4.mp4'
 import v5 from './assets/moments_5.mp4'
+import v6 from './assets/moments_6.mp4'
+import v7 from './assets/moments_7.mp4'
+import v8 from './assets/moments_8.mp4'
+import v9 from './assets/moments_9.mp4'
+import v10 from './assets/moments_10.mp4'
 
 function App() {
   const [student1] = useState('Thi Chien')
   const [student2] = useState('Chi Huu')
   const [hearts, setHearts] = useState([])
 
-  const videos = [v1, v2, v3, v4, v5]
+  const videos = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10]
 
   useEffect(() => {
     const heartCount = 15
