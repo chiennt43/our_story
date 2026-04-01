@@ -23,7 +23,8 @@ function App() {
 
       <header className="hero">
         <div className="title-container">
-          <h1 style={{ fontSize: '3rem' }}>Our Beautiful Chapter</h1>
+          <h1 style={{ fontSize: '3rem' }}>Happy 10 Years Anniversary</h1>
+          <p className="subtitle" style={{ fontSize: '1.2rem', marginTop: '0.5rem', opacity: 0.8 }}>School Love Story</p>
           <p className="subtitle" style={{ fontSize: '1.8rem', marginTop: '1rem' }}>{student1} & {student2}</p>
         </div>
       </header>
