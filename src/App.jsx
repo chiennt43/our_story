@@ -64,8 +64,9 @@ function App() {
             marginTop: '1rem',
             backdropFilter: 'blur(10px)'
           }}>
-            <p className="subtitle" style={{ fontSize: '1.4rem', margin: 0, opacity: 1, letterSpacing: '2px', fontWeight: '700', color: '#ff758c' }}>3/4/2016 ⇒ 3/4/2026</p>
+            <p className="subtitle" style={{ fontSize: '1.4rem', margin: 0, opacity: 1, letterSpacing: '2px', fontWeight: '700', color: '#ff758c' }}>3/4/2016 💕 3/4/2026</p>
           </div>
+          <p className="subtitle" style={{ fontSize: '1.2rem', marginTop: '1rem', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '300', color: 'rgba(255,255,255,0.7)' }}>School Love</p>
           <p className="subtitle" style={{ fontSize: '2rem', marginTop: '1.5rem', fontWeight: '500' }}>{student1} & {student2}</p>
         </div>
       </header>
