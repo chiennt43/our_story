@@ -1,10 +1,13 @@
 {
-  "name": "student",
+  "name": "our_story",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://chiennt43.github.io/our_story",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
