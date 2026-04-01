@@ -168,7 +168,7 @@ function App() {
           <div className="love-counter" style={{ marginTop: '2.5rem', fontSize: '1.6rem', color: '#440022', animation: 'shine 4s infinite', fontWeight: '600' }}>
             <span style={{ fontWeight: '900', color: '#ff758c' }}>{daysOfLove}</span> Days of Love and Counting ✨
           </div>
-          <p className="subtitle" style={{ fontSize: '1.2rem', marginTop: '0.8rem', fontStyle: 'italic', color: '#660033', fontWeight: '700' }}>"Hành trình từ bạn cùng lớp 💕 bạn cùng Love"</p>
+          <p className="subtitle" style={{ fontSize: '1.2rem', marginTop: '0.8rem', fontStyle: 'italic', color: '#660033', fontWeight: '700' }}>"Hành trình từ bạn cùng Lớp 💕 bạn cùng Love"</p>
           <p className="subtitle" style={{ fontSize: '2.2rem', marginTop: '2.5rem', fontWeight: '800', color: '#440022' }}>{student1} & {student2}</p>
         </div>
       </header>
@@ -262,12 +262,14 @@ function App() {
               Câu chuyện của bọn mình
              </h3>
              <p style={{ fontSize: '1.5rem', lineHeight: '2', color: '#440022', fontWeight: '700' }}>
-              Năm 2014, Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép được viết tắt PN Viet Nam - Khoá PNV16) và đó cũng là cơ duyên mà bọn mình gặp nhau.
-              Mình không nhớ rõ là mình bắt đầu thích Anh từ khi nào và mình đã bắt đầu theo đuổi Anh, Tháng 2/2016 mình tỏ tình với Anh, và tháng 4 mình đã nhận được lời tỏ tình ngược.
+              Năm 2014, Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép được viết tắt PN Viet Nam - Khoá PNV16 lớp Dev) và đó cũng là cơ duyên mà bọn mình gặp nhau.
+              Mình không nhớ rõ là mình bắt đầu thích Anh từ khi nào và mình đã bắt đầu theo đuổi Anh, Tháng 2/2016 mình tỏ tình với Anh, và tháng 4/2016 mình đã nhận được lời tỏ tình ngược.
               Và thế là chúng mình chính thức yêu nhau từ đó.
-              Mình thích Anh vì Anh có những nét tính cách mà mình thích 
+              Mình thích Anh vì Anh có những nét tính cách mà mình thích.
               Anh nói thích mình vì trông mình Ngộ Ngộ. 
-              Thật vui vì người mình thích vừa hay cũng thích mình
+              Thật vui vì người mình thích vừa hay cũng thích mình.
+              Cảm ơn Anh vì đã đồng ý đồng hành cùng em và mang đến cho em những điều tốt đẹp nhất.
+              Gửi thời thanh xuân tươi đẹp và ấm áp của chúng ta.
              </p>
           </div>
         </section>
