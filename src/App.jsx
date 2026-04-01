@@ -94,22 +94,6 @@ function App() {
             </div>
           </div>
 
-          <div className="description" style={{ padding: '0 1rem', marginTop: '1.5rem' }}>
-            <p style={{ 
-              fontSize: '1.3rem', 
-              color: '#ffffff', 
-              fontWeight: '500', 
-              lineHeight: '1.6', 
-              textShadow: '0 2px 10px rgba(0,0,0,0.5)' 
-            }}>{description}</p>
-          </div>
-
-          <div className="actions" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
-            <button onClick={() => {
-              const d = prompt('Update Story Text:', description);
-              if (d) setDescription(d);
-            }}>Edit Story</button>
-          </div>
         </section>
       </main>
 
