@@ -171,7 +171,7 @@ function App() {
                   textShadow: '0 0 25px rgba(255, 117, 140, 1)',
                   animation: 'pulse 2s infinite ease-in-out'
                 }}>❤️</div>
-                {!showSurprise && <div style={{ position: 'absolute', bottom: '-40px', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontSize: '0.9rem', color: '#ff7eb3', opacity: 0.7, pointerEvents: 'none' }}>Click for a surprise ✨</div>}
+                {!showSurprise && <div style={{ position: 'absolute', bottom: '-40px', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontSize: '1rem', color: '#ff758c', fontWeight: '500', pointerEvents: 'none' }}>Xem câu chuyện của bọn mình nhé ✨</div>}
             </div>
             
             <div className="student">
@@ -192,18 +192,18 @@ function App() {
             <div className="surprise-message" style={{ 
               marginTop: '3rem', 
               animation: 'fadeInUp 1s ease-out', 
-              color: '#ffffff',
-              background: 'linear-gradient(135deg, rgba(255, 117, 140, 0.1), rgba(172, 50, 228, 0.1))',
+              color: '#ff7eb3', 
+              background: 'rgba(255, 255, 255, 0.08)',
               padding: '2rem',
               borderRadius: '20px',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 117, 140, 0.2)',
               boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
               textAlign: 'center'
             }}>
-               <h3 style={{ fontSize: '2rem', marginBottom: '1rem', background: 'linear-gradient(135deg, #ff7eb3, #ac32e4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                10 Years and counting...
+               <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', background: 'linear-gradient(135deg, #ff7eb3, #ac32e4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                Câu chuyện của bọn mình
                </h3>
-               <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#eee' }}>
+               <p style={{ fontSize: '1.25rem', lineHeight: '1.8', color: '#ff9cb3', fontWeight: '500' }}>
                 Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép viết tắt PN Viet Nam) và đó cũng là cơ duyên mà bọn mình gặp nhau.
                </p>
                <button 
