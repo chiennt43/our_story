@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import boyImg from './assets/boy.jpg'
 import girlImg from './assets/girl.jpg'
@@ -9,23 +9,59 @@ import v4 from './assets/moments_4.mp4'
 import v5 from './assets/moments_5.mp4'
 
 function App() {
-  const [student1, setStudent1] = useState('Thi Chien')
-  const [student2, setStudent2] = useState('Chi Huu')
-  const [description, setDescription] = useState('A story of two souls meeting under the cherry blossoms, where time stood still and hearts began to beat in unison. This is the beautiful chapter of Thi Chien and Chi Huu.')
+  const [student1] = useState('Thi Chien')
+  const [student2] = useState('Chi Huu')
+  const [hearts, setHearts] = useState([])
 
   const videos = [v1, v2, v3, v4, v5]
 
+  useEffect(() => {
+    const heartCount = 15
+    const newHearts = Array.from({ length: heartCount }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100 + 'vw',
+      duration: 10 + Math.random() * 20 + 's',
+      delay: Math.random() * 5 + 's',
+      size: 15 + Math.random() * 20 + 'px'
+    }))
+    setHearts(newHearts)
+  }, [])
+
   return (
     <div className="app">
+      <div className="heart-bg">
+        {hearts.map(heart => (
+          <div 
+            key={heart.id}
+            className="floating-heart"
+            style={{ 
+              left: heart.left, 
+              animationDuration: heart.duration, 
+              animationDelay: heart.delay,
+              fontSize: heart.size
+            }}
+          >❤️</div>
+        ))}
+      </div>
       <div className="back-lighting"></div>
       <div className="glow glow-pink" style={{ top: '10%' }}></div>
       <div className="glow glow-purple" style={{ bottom: '10%' }}></div>
 
       <header className="hero">
         <div className="title-container">
-          <h1 style={{ fontSize: '3rem' }}>Happy 10 Years Anniversary</h1>
-          <p className="subtitle" style={{ fontSize: '1.2rem', marginTop: '0.5rem', opacity: 0.8 }}>School Love Story</p>
-          <p className="subtitle" style={{ fontSize: '1.8rem', marginTop: '1rem' }}>{student1} & {student2}</p>
+          <h1 style={{ fontSize: '3.5rem', textShadow: '0 0 20px rgba(255, 117, 140, 0.4)' }}>Happy 10 Years Anniversary</h1>
+          <div className="timeline-badge" style={{ 
+            display: 'inline-block',
+            padding: '10px 25px',
+            borderRadius: '50px',
+            background: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 117, 140, 0.3)',
+            marginTop: '1rem',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <p className="subtitle" style={{ fontSize: '1.4rem', margin: 0, opacity: 1, letterSpacing: '2px', fontWeight: '700', color: '#ff758c' }}>3/4/2016 ⇒ 3/4/2026</p>
+          </div>
+          <p className="subtitle" style={{ fontSize: '2rem', marginTop: '1.5rem', fontWeight: '500' }}>{student1} & {student2}</p>
         </div>
       </header>
 
@@ -63,43 +99,54 @@ function App() {
           </div>
         </section>
 
-        <section className="story-card" style={{ background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(20px)' }}>
+        <section className="story-card" style={{ background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(20px)', marginBottom: '8rem' }}>
           <div className="student-display">
             <div className="student">
               <div className="avatar" style={{ 
-                width: '150px', 
-                height: '150px', 
+                width: '160px', 
+                height: '160px', 
                 overflow: 'hidden', 
                 border: '4px solid #ff758c',
-                boxShadow: '0 0 20px rgba(255, 117, 140, 0.3)'
+                boxShadow: '0 0 30px rgba(255, 117, 140, 0.5)'
               }}>
                 <img src={girlImg} alt={student1} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <span className="student-name" style={{ fontSize: '1.4rem' }}>{student1}</span>
+              <span className="student-name" style={{ fontSize: '1.6rem', color: '#ff7eb3' }}>{student1}</span>
             </div>
             
-            <div className="heart-icon" style={{ fontSize: '3rem', color: '#ff758c', textShadow: '0 0 15px rgba(255, 117, 140, 0.5)' }}>❤️</div>
+            <div className="heart-icon" style={{ 
+              fontSize: '4rem', 
+              color: '#ff758c', 
+              textShadow: '0 0 20px rgba(255, 117, 140, 0.8)',
+              animation: 'pulse 2s infinite ease-in-out'
+            }}>❤️</div>
             
             <div className="student">
               <div className="avatar" style={{ 
-                width: '150px', 
-                height: '150px', 
+                width: '160px', 
+                height: '160px', 
                 overflow: 'hidden', 
                 border: '4px solid #ac32e4',
-                boxShadow: '0 0 20px rgba(172, 50, 228, 0.3)'
+                boxShadow: '0 0 30px rgba(172, 50, 228, 0.5)'
               }}>
                 <img src={boyImg} alt={student2} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <span className="student-name" style={{ fontSize: '1.4rem' }}>{student2}</span>
+              <span className="student-name" style={{ fontSize: '1.6rem', color: '#ac32e4' }}>{student2}</span>
             </div>
           </div>
-
         </section>
       </main>
 
-      <footer style={{ marginTop: '4rem', paddingBottom: '3rem', opacity: 0.4, fontSize: '0.85rem' }}>
-        Created with love for Thi Chien & Chi Huu
+      <footer style={{ marginTop: '4rem', paddingBottom: '3rem', opacity: 0.5, fontSize: '0.9rem' }}>
+        Thi Chien ❤️ Chi Huu — A Decade of Love
       </footer>
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.15); }
+        }
+      `}</style>
     </div>
   )
 }
