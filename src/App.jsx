@@ -235,6 +235,7 @@ function App() {
                   textShadow: '0 0 30px rgba(255, 117, 140, 1)',
                   animation: 'pulse 2s infinite ease-in-out'
                 }}>❤️</div>
+                <div style={{ position: 'absolute', bottom: '-25px', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontSize: '1rem', color: '#440022', fontWeight: '800' }}>Click here ✨</div>
             </div>
             
             <div className="student">
@@ -260,7 +261,7 @@ function App() {
               Câu chuyện của bọn mình
              </h3>
              <p style={{ fontSize: '1.5rem', lineHeight: '2', color: '#440022', fontWeight: '700' }}>
-              Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép viết tắt PN Viet Nam) và đó cũng là cơ duyên mà bọn mình gặp nhau.
+              Năm 2014, Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép được viết tắt PN Viet Nam - Khoá PNV16) và đó cũng là cơ duyên mà bọn mình gặp nhau.
              </p>
           </div>
         </section>
