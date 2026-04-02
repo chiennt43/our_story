@@ -17,8 +17,8 @@ import v10 from './assets/moments_10.mp4'
 
 function App() {
   const [hasStarted, setHasStarted] = useState(false)
-  const [student1] = useState('Thi Chien')
-  const [student2] = useState('Chi Huu')
+  const [student1] = useState('Sóc Nhỏ')
+  const [student2] = useState('Dustin Cao')
   const [hearts, setHearts] = useState([])
   const [daysOfLove, setDaysOfLove] = useState(0)
 
@@ -92,8 +92,11 @@ function App() {
         textAlign: 'center',
         padding: '2rem'
       }}>
-         <h1 style={{ fontSize: '3rem', marginBottom: '2rem', textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>Our 10 Year Love Story ✨</h1>
-         <p style={{ fontSize: '1.2rem', marginBottom: '3rem', opacity: 0.9 }}>3/4/2016 💕 3/4/2026</p>
+         <h1 style={{ fontSize: '3.5rem', marginBottom: '2rem', textShadow: '0 4px 20px rgba(0,0,0,0.5)', fontWeight: '900' }}>Our 10 Years Love Story ✨</h1>
+         <p style={{ fontSize: '1.2rem', marginBottom: '1rem', opacity: 0.9 }}>3/4/2016 💕 3/4/2026</p>
+          <div style={{ marginBottom: '2rem', fontSize: '1.2rem', fontWeight: '800', opacity: 0.9 }}>
+           Thi Chien ❤️ Chi Huu — A Decade of Love
+         </div>
          <button 
            onClick={handleStart}
            style={{
@@ -149,34 +152,40 @@ function App() {
       <div className="glow glow-pink" style={{ top: '10%' }}></div>
       <div className="glow glow-purple" style={{ bottom: '10%' }}></div>
 
+
+
       <header className="hero">
         <div className="title-container">
           <h1 style={{ fontSize: '3.5rem', color: '#440022', fontWeight: '800' }}>Happy 10 Years Anniversary</h1>
+          <div style={{ fontSize: '1.8rem', color: '#440022', fontWeight: '900', marginTop: '0.5rem', opacity: 0.9 }}>
+              Thi Chien ❤️ Chi Huu
+          </div>
           <div className="timeline-badge" style={{ 
             display: 'inline-block',
             padding: '10px 25px',
             borderRadius: '50px',
             background: 'rgba(255, 255, 255, 0.4)',
             border: '2px solid #ff758c',
-            marginTop: '1.5rem',
+            marginTop: '1.2rem',
             backdropFilter: 'blur(20px)',
             boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
           }}>
             <p className="subtitle" style={{ fontSize: '1.5rem', margin: 0, opacity: 1, letterSpacing: '2px', fontWeight: '800', color: '#440022' }}>3/4/2016 💕 3/4/2026</p>
           </div>
-          <p className="subtitle" style={{ fontSize: '1.3rem', marginTop: '1.2rem', textTransform: 'uppercase', letterSpacing: '4px', fontWeight: '700', color: '#660033' }}>School Love</p>
-          <div className="love-counter" style={{ marginTop: '2.5rem', fontSize: '1.6rem', color: '#440022', animation: 'shine 4s infinite', fontWeight: '600' }}>
-            <span style={{ fontWeight: '900', color: '#ff758c' }}>{daysOfLove}</span> Days of Love and Counting ✨
+          <div className="love-counter" style={{ marginTop: '2rem', fontSize: '1.6rem', color: '#440022', animation: 'shine 4s infinite', fontWeight: '600' }}>
+            <span style={{ fontWeight: '900', color: '#ff758c' }}>{daysOfLove}</span> Days of Love ✨
           </div>
-          <p className="subtitle" style={{ fontSize: '1.2rem', marginTop: '0.8rem', fontStyle: 'italic', color: '#660033', fontWeight: '700' }}>"Hành trình từ bạn cùng Lớp 💕 bạn cùng Love"</p>
-          <p className="subtitle" style={{ fontSize: '2.2rem', marginTop: '2.5rem', fontWeight: '800', color: '#440022' }}>{student1} & {student2}</p>
+          <p style={{ fontSize: '1.2rem', marginTop: '1.8rem', fontWeight: '800', color: '#440022' }}>Sóc Nhỏ ❤️ Dustin Cao — A Decade of Love</p>
+        </div>
+        <div className="story-link-hint" style={{ marginTop: '3rem', fontSize: '1.4rem', fontWeight: '800', color: '#440022', animation: 'shine 4s infinite' }}>
+          Hành trình từ Bạn cùng Lớp ❤️ Bạn cùng Love
         </div>
       </header>
 
       <main className="content">
         <section className="video-grid-section">
           <div className="story-card" style={{ padding: '2.5rem', maxWidth: 'none', width: '100%', background: 'rgba(255, 255, 255, 0.25)', backdropFilter: 'blur(30px)', border: '1px solid rgba(255, 117, 140, 0.3)', boxShadow: '0 30px 60px rgba(0,0,0,0.05)' }}>
-            <h2 style={{ marginBottom: '3rem', background: 'linear-gradient(135deg, #ff7eb3, #440022)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', textAlign: 'center', fontSize: '2.2rem', fontWeight: '800' }}>Our Special Moments</h2>
+            <h2 style={{ marginBottom: '3rem', background: 'linear-gradient(135deg, #ff7eb3, #440022)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', textAlign: 'center', fontSize: '2.2rem', fontWeight: '800' }}>Hẹn ước cùng trưởng thành</h2>
             
             <div className="video-grid" style={{ 
               display: 'grid', 
@@ -210,6 +219,38 @@ function App() {
           </div>
         </section>
 
+        <section className="youtube-section" style={{ marginBottom: '4rem' }}>
+          <div className="story-card" style={{ padding: '2.5rem', background: 'rgba(255, 255, 255, 0.25)', backdropFilter: 'blur(30px)', border: '1px solid rgba(255, 117, 140, 0.3)', boxShadow: '0 30px 60px rgba(0,0,0,0.05)' }}>
+            <h2 style={{ marginBottom: '2rem', background: 'linear-gradient(135deg, #ff7eb3, #440022)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', textAlign: 'center', fontSize: '2.2rem', fontWeight: '800' }}>Bài Hát Của Chúng Mình ❤️</h2>
+            <div className="video-responsive" style={{
+              overflow: 'hidden',
+              paddingBottom: '56.25%',
+              position: 'relative',
+              height: 0,
+              borderRadius: '24px',
+              boxShadow: '0 15px 40px rgba(0,0,0,0.2)'
+            }}>
+              <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/Vl6wD0wB3Gc?si=L_PTk_a6Y-Xa-WEH" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                style={{
+                  left: 0,
+                  top: 0,
+                  height: '100%',
+                  width: '100%',
+                  position: 'absolute'
+                }}
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
         <section className="story-card" style={{ background: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(35px)', marginBottom: '8rem', position: 'relative', border: '1px solid rgba(255,255,255,0.5)', boxShadow: '0 40px 80px rgba(0,0,0,0.05)' }}>
           <div className="student-display">
             <div className="student">
@@ -225,18 +266,11 @@ function App() {
               <span className="student-name" style={{ fontSize: '1.8rem', color: '#440022', fontWeight: '800', marginTop: '1rem' }}>{student1}</span>
             </div>
             
-            <div 
-              className="heart-icon-wrapper" 
-              onClick={handleCelebrate}
-              style={{ cursor: 'pointer', position: 'relative', transition: 'transform 0.3s ease' }}
-            >
-               <div className="heart-icon" style={{ 
-                  fontSize: '5rem', 
-                  color: '#ff758c', 
-                  textShadow: '0 0 30px rgba(255, 117, 140, 1)',
-                  animation: 'pulse 2s infinite ease-in-out'
-                }}>❤️</div>
-                <div style={{ position: 'absolute', bottom: '-25px', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontSize: '1rem', color: '#440022', fontWeight: '800' }}>Click here ✨</div>
+            <div className="celebration-trigger" onClick={handleCelebrate}>
+              <div className="sparkle sparkles-1">✨</div>
+              <div className="main-heart">❤️</div>
+              <div className="sparkle sparkles-2">✨</div>
+              <span className="celebration-text">Tap the Love</span>
             </div>
             
             <div className="student">
@@ -261,15 +295,15 @@ function App() {
              <h3 style={{ fontSize: '2.2rem', marginBottom: '1.5rem', background: 'linear-gradient(135deg, #ff7eb3, #440022)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: '800' }}>
               Câu chuyện của bọn mình
              </h3>
+             <h4>Gửi thời thanh xuân tươi đẹp và ấm áp của chúng ta.</h4>
              <p style={{ fontSize: '1.5rem', lineHeight: '2', color: '#440022', fontWeight: '700' }}>
               Năm 2014, Bọn mình may mắn được trao cơ hội học tập tại Trường (mình xin phép được viết tắt PN Viet Nam - Khoá PNV16 lớp Dev) và đó cũng là cơ duyên mà bọn mình gặp nhau.
-              Mình không nhớ rõ là mình bắt đầu thích Anh từ khi nào và mình đã bắt đầu theo đuổi Anh, Tháng 2/2016 mình tỏ tình với Anh, và tháng 4/2016 mình đã nhận được lời tỏ tình ngược.
+              Mình không nhớ rõ là mình bắt đầu thích Anh từ khi nào và mình đã bắt đầu theo đuổi Anh, Tháng 2/2016 mình tỏ tình với Anh, và tháng 4/2016 mình đã nhận được lời tỏ tình ngược từ Anh.
               Và thế là chúng mình chính thức yêu nhau từ đó.
               Mình thích Anh vì Anh có những nét tính cách mà mình thích.
               Anh nói thích mình vì trông mình Ngộ Ngộ. 
               Thật vui vì người mình thích vừa hay cũng thích mình.
-              Cảm ơn Anh vì đã đồng ý đồng hành cùng em và mang đến cho em những điều tốt đẹp nhất.
-              Gửi thời thanh xuân tươi đẹp và ấm áp của chúng ta.
+              Cảm ơn Anh vì đã đồng hành cùng em và mang đến cho em những điều tốt đẹp nhất.
              </p>
           </div>
         </section>
